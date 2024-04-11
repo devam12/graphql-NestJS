@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type MemberSettings {
+  userId: Int
+  receiveNotofications: Boolean!
+  receiveEmails: Boolean!
+}
+
+type Member {
+  id: Int!
+  username: String!
+  displayName: String
+  settings: MemberSettings
+}
+
+type Query {
+  getMemberById(id: Int!): Member
+  getMembers: [Member!]
+}
+
+type Mutation {
+  createMember(createMemberData: createMemberType!): Member
+  createMemberSetting(setting: createMemberSettingType!): MemberSettings!
+}
+
+input createMemberType {
+  username: String!
+  displayName: String!
+}
+
+input createMemberSettingType {
+  userId: Int!
+  receiveNotofications: Boolean!
+  receiveEmails: Boolean!
+}
